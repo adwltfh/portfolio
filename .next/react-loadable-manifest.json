@@ -1,0 +1,48 @@
+{
+  "../node_modules/.pnpm/@heroui+accordion@2.2.27_@heroui+system@2.4.26_@heroui+theme@2.4.26_tailwindcss@4.1.16__e56896d63e9192eab586fe04a808675c/node_modules/@heroui/accordion/dist/chunk-CY6RTJSV.mjs -> @heroui/dom-animation": {
+    "id": "../node_modules/.pnpm/@heroui+accordion@2.2.27_@heroui+system@2.4.26_@heroui+theme@2.4.26_tailwindcss@4.1.16__e56896d63e9192eab586fe04a808675c/node_modules/@heroui/accordion/dist/chunk-CY6RTJSV.mjs -> @heroui/dom-animation",
+    "files": []
+  },
+  "../node_modules/.pnpm/@heroui+calendar@2.2.30_@heroui+system@2.4.26_@heroui+theme@2.4.26_tailwindcss@4.1.16___6f111384a1481f8d05c1dac5ae912ed8/node_modules/@heroui/calendar/dist/chunk-MNZWV6CN.mjs -> @heroui/dom-animation": {
+    "id": "../node_modules/.pnpm/@heroui+calendar@2.2.30_@heroui+system@2.4.26_@heroui+theme@2.4.26_tailwindcss@4.1.16___6f111384a1481f8d05c1dac5ae912ed8/node_modules/@heroui/calendar/dist/chunk-MNZWV6CN.mjs -> @heroui/dom-animation",
+    "files": []
+  },
+  "../node_modules/.pnpm/@heroui+modal@2.2.27_@heroui+system@2.4.26_@heroui+theme@2.4.26_tailwindcss@4.1.16__fra_fc966e0bdd313b064d99bfa12f9c373b/node_modules/@heroui/modal/dist/chunk-NWAOTABO.mjs -> @heroui/dom-animation": {
+    "id": "../node_modules/.pnpm/@heroui+modal@2.2.27_@heroui+system@2.4.26_@heroui+theme@2.4.26_tailwindcss@4.1.16__fra_fc966e0bdd313b064d99bfa12f9c373b/node_modules/@heroui/modal/dist/chunk-NWAOTABO.mjs -> @heroui/dom-animation",
+    "files": []
+  },
+  "../node_modules/.pnpm/@heroui+navbar@2.2.28_@heroui+system@2.4.26_@heroui+theme@2.4.26_tailwindcss@4.1.16__fr_eaea1917ec07e1bbf758ecaa7de1c445/node_modules/@heroui/navbar/dist/chunk-EGL3KBB2.mjs -> @heroui/dom-animation": {
+    "id": "../node_modules/.pnpm/@heroui+navbar@2.2.28_@heroui+system@2.4.26_@heroui+theme@2.4.26_tailwindcss@4.1.16__fr_eaea1917ec07e1bbf758ecaa7de1c445/node_modules/@heroui/navbar/dist/chunk-EGL3KBB2.mjs -> @heroui/dom-animation",
+    "files": []
+  },
+  "../node_modules/.pnpm/@heroui+navbar@2.2.28_@heroui+system@2.4.26_@heroui+theme@2.4.26_tailwindcss@4.1.16__fr_eaea1917ec07e1bbf758ecaa7de1c445/node_modules/@heroui/navbar/dist/chunk-IWMNIPIV.mjs -> @heroui/dom-animation": {
+    "id": "../node_modules/.pnpm/@heroui+navbar@2.2.28_@heroui+system@2.4.26_@heroui+theme@2.4.26_tailwindcss@4.1.16__fr_eaea1917ec07e1bbf758ecaa7de1c445/node_modules/@heroui/navbar/dist/chunk-IWMNIPIV.mjs -> @heroui/dom-animation",
+    "files": []
+  },
+  "../node_modules/.pnpm/@heroui+popover@2.3.30_@heroui+system@2.4.26_@heroui+theme@2.4.26_tailwindcss@4.1.16__f_5bf71571eb8e0f120373c3d576552c99/node_modules/@heroui/popover/dist/chunk-NW7HJLND.mjs -> @heroui/dom-animation": {
+    "id": "../node_modules/.pnpm/@heroui+popover@2.3.30_@heroui+system@2.4.26_@heroui+theme@2.4.26_tailwindcss@4.1.16__f_5bf71571eb8e0f120373c3d576552c99/node_modules/@heroui/popover/dist/chunk-NW7HJLND.mjs -> @heroui/dom-animation",
+    "files": []
+  },
+  "../node_modules/.pnpm/@heroui+popover@2.3.30_@heroui+system@2.4.26_@heroui+theme@2.4.26_tailwindcss@4.1.16__f_5bf71571eb8e0f120373c3d576552c99/node_modules/@heroui/popover/dist/chunk-Z57F4COC.mjs -> @heroui/dom-animation": {
+    "id": "../node_modules/.pnpm/@heroui+popover@2.3.30_@heroui+system@2.4.26_@heroui+theme@2.4.26_tailwindcss@4.1.16__f_5bf71571eb8e0f120373c3d576552c99/node_modules/@heroui/popover/dist/chunk-Z57F4COC.mjs -> @heroui/dom-animation",
+    "files": []
+  },
+  "../node_modules/.pnpm/@heroui+ripple@2.2.21_@heroui+system@2.4.26_@heroui+theme@2.4.26_tailwindcss@4.1.16__fr_976b0d1b02d27d7e0c365f8fc706dac3/node_modules/@heroui/ripple/dist/chunk-UIQI3AYJ.mjs -> @heroui/dom-animation": {
+    "id": "../node_modules/.pnpm/@heroui+ripple@2.2.21_@heroui+system@2.4.26_@heroui+theme@2.4.26_tailwindcss@4.1.16__fr_976b0d1b02d27d7e0c365f8fc706dac3/node_modules/@heroui/ripple/dist/chunk-UIQI3AYJ.mjs -> @heroui/dom-animation",
+    "files": [
+      "static/chunks/_app-pages-browser_node_modules_pnpm_heroui_dom-animation_2_1_10_framer-motion_12_33_0_react--c752bb.js"
+    ]
+  },
+  "../node_modules/.pnpm/@heroui+toast@2.0.20_@heroui+system@2.4.26_@heroui+theme@2.4.26_tailwindcss@4.1.16__fra_781f8866852ad085028edfb095e0fe44/node_modules/@heroui/toast/dist/chunk-LE3O4WYR.mjs -> ./src-UW24ZMRV.mjs": {
+    "id": "../node_modules/.pnpm/@heroui+toast@2.0.20_@heroui+system@2.4.26_@heroui+theme@2.4.26_tailwindcss@4.1.16__fra_781f8866852ad085028edfb095e0fe44/node_modules/@heroui/toast/dist/chunk-LE3O4WYR.mjs -> ./src-UW24ZMRV.mjs",
+    "files": []
+  },
+  "../node_modules/.pnpm/@heroui+toast@2.0.20_@heroui+system@2.4.26_@heroui+theme@2.4.26_tailwindcss@4.1.16__fra_781f8866852ad085028edfb095e0fe44/node_modules/@heroui/toast/dist/chunk-ZPZBECKL.mjs -> framer-motion": {
+    "id": "../node_modules/.pnpm/@heroui+toast@2.0.20_@heroui+system@2.4.26_@heroui+theme@2.4.26_tailwindcss@4.1.16__fra_781f8866852ad085028edfb095e0fe44/node_modules/@heroui/toast/dist/chunk-ZPZBECKL.mjs -> framer-motion",
+    "files": []
+  },
+  "../node_modules/.pnpm/@heroui+tooltip@2.2.27_@heroui+system@2.4.26_@heroui+theme@2.4.26_tailwindcss@4.1.16__f_2759caf01076c795907b4a72d7b16c0f/node_modules/@heroui/tooltip/dist/chunk-AUA5GDXN.mjs -> @heroui/dom-animation": {
+    "id": "../node_modules/.pnpm/@heroui+tooltip@2.2.27_@heroui+system@2.4.26_@heroui+theme@2.4.26_tailwindcss@4.1.16__f_2759caf01076c795907b4a72d7b16c0f/node_modules/@heroui/tooltip/dist/chunk-AUA5GDXN.mjs -> @heroui/dom-animation",
+    "files": []
+  }
+}

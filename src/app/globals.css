@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme {
+    /* Font Family */
+    --font-family-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    
+    /* Custom Colors */
+    --color-heading: #2d2d2d;
+    --color-body: #4a4a4a;
+    --color-accent: #dc2626;
+    
+    /* Or extend existing color palette */
+    --color-gray-800: #2d2d2d;
+    --color-gray-600: #4a4a4a;
+    --color-red-600: #dc2626;
+  }
+  
+  /* Set default text color */
+  body {
+    @apply text-gray-600;
+    font-family: var(--font-family-sans);
+  }
+  
+  /* Heading defaults */
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-gray-800 font-bold;
+  }
