@@ -41,7 +41,7 @@ export default function AccordionButton({
           startContent={icon}
           variant="flat"
           disableRipple
-          className="p-0 h-auto w-full text-left flex"
+          className="p-0 h-auto flex w-full justify-start"
           onPress={toggle}
         >
           <span>{label}</span>

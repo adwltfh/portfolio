@@ -11,12 +11,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {/* <div className="">
-          <div className="border border-gray-400 rounded-2xl p-6">
-            {children}
-          </div>
-        </div> */}
-
         <ModalProvider>
           <div>{children}</div>
           <ModalContainer />

@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 
 import { BriefcaseBusiness, FolderGit2, UserStar } from "lucide-react";
 
@@ -10,7 +10,7 @@ import AboutMe from "../components/modalPages/AboutMe";
 import Experiences from "../components/modalPages/Experiences";
 import AccordionButton from "../components/AccordionButton";
 import { Button } from "@heroui/react";
-import Buttons from "../components/Buttons";
+import ProjectPreview from "../components/ProjectPreview";
 
 export default function Home() {
   // kalo mau panggil modal selalu pake ini pokoknyaa
@@ -20,6 +20,7 @@ export default function Home() {
   const [currentTitle, setCurrentTitle] = useState("About Me");
   const [currentContent, setCurrentContent] = useState<ReactNode>(<AboutMe />);
   const [activeYear, setActiveYear] = useState<string | null>(null);
+  const [activeProject, setActiveProject] = useState<string | null>(null);
 
   const openContent = (title: string, content: ReactNode) => {
     setCurrentTitle(title);
@@ -27,11 +28,11 @@ export default function Home() {
   };
 
   const openMenu = (title: string, content: ReactNode) => {
-    setActiveYear(null);        
+    setActiveYear(null);
     setCurrentTitle(title);
     setCurrentContent(content);
   };
-  
+
   const projectItems = [
     {
       title: "2021",
@@ -46,17 +47,21 @@ export default function Home() {
     },
     {
       title: "2023",
-      children: [{ title: "E-Commerce", content: null }],
+      children: [{ title: "Cyber Security", content: null }],
     },
   ];
+
+  useEffect(() => {
+    setActiveProject(null);
+  }, [activeYear]);
 
   // const openSiteInModal = (url: string, title: string) => {
   //   openModal(title, <IframeWithFallback url={url} title={title} />);
   // };
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-gray-50 to-gray-100 p-8">
-      <div className="max-w-8xl mx-auto border border-gray-400 rounded-2xl">
+    <div className="min-h-screen py-12 px-8 flex items-center justify-center">
+      <div className="h-fit w-full max-w-8xl bg-gray-50/30 border border-gray-400 rounded-2xl">
         {/* button container */}
         <div className="border-b border-gray-400">
           <div className="p-4 bg-gray-100 rounded-tl-2xl rounded-tr-2xl">
@@ -70,19 +75,19 @@ export default function Home() {
             <Button
               startContent={<UserStar />}
               disableRipple
-              className="p-0 flex w-full text-left cursor-pointer"
+              className="p-0 flex w-full justify-start cursor-pointer"
               onPress={() => openMenu("About Me", <AboutMe />)}
             >
               About Me
             </Button>
-            <Button
+            {/* <Button
               startContent={<BriefcaseBusiness />}
               disableRipple
-              className="p-0 flex w-full text-left cursor-pointer"
+              className="p-0 flex w-full justify-start cursor-pointer"
               onPress={() => openMenu("Experiences", <Experiences />)}
             >
               Experiences
-            </Button>
+            </Button> */}
             <AccordionButton
               label="Projects"
               icon={<FolderGit2 />}
@@ -91,13 +96,13 @@ export default function Home() {
               setActiveYear={setActiveYear}
             />
             <button
-              className="w-full text-left cursor-pointer"
+              className="flex w-full justify-start cursor-pointer"
               onClick={() => openMenu("Playgorund", null)}
             >
               Playground
             </button>
             <button
-              className="w-full text-left cursor-pointer"
+              className="flex w-full justify-start cursor-pointer"
               onClick={() => openMenu("Socials", null)}
             >
               Socials
@@ -108,9 +113,11 @@ export default function Home() {
           {/* middle section, only shows when the accordion button is active */}
           {!!activeYear && (
             <>
-              <Buttons
+              <ProjectPreview
                 projectItems={projectItems}
                 activeYear={activeYear}
+                activeProject={activeProject}
+                setActiveProject={setActiveProject}
                 openContent={openContent}
               />
 
@@ -127,25 +134,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </div>
-  );
-}
-
-// ini contoh buat content doang, nanti dihapus
-function AboutContent() {
-  return (
-    <div>
-      <h2 className="text-2xl font-bold text-heading mb-4">About Us</h2>
-      <p className="text-body">This is draggable modal content!</p>
-    </div>
-  );
-}
-
-function ContactContent() {
-  return (
-    <div>
-      <h2 className="text-2xl font-bold text-heading mb-4">Contact</h2>
-      <p className="text-body">Email: hello@example.com</p>
     </div>
   );
 }
