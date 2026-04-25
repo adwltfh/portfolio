@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Adawiyyah Latifah ⋆˚࿔ resume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&family=Nunito:wght@400;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --lilac: #efe6ff;
+    --lilac-2: #e1d2ff;
+    --lilac-deep: #b59cf0;
+    --pink: #ffd5e5;
+    --pink-deep: #ff8fb3;
+    --butter: #fff3a8;
+    --butter-deep: #f5d96b;
+    --sky: #c9e7ff;
+    --sky-deep: #82c2f0;
+    --mint: #c9f3d8;
+    --mint-deep: #7ad6a0;
+    --ink: #3a2a55;
+    --ink-soft: #6b5a85;
+    --paper: #fdfaff;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(circle at 12% 8%, var(--pink) 0%, transparent 24%),
+      radial-gradient(circle at 88% 22%, var(--butter) 0%, transparent 22%),
+      radial-gradient(circle at 8% 60%, var(--sky) 0%, transparent 24%),
+      radial-gradient(circle at 92% 78%, var(--pink) 0%, transparent 22%),
+      radial-gradient(circle at 50% 95%, var(--mint) 0%, transparent 26%),
+      var(--lilac);
+    background-attachment: fixed;
+    font-family: 'Nunito', system-ui, sans-serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* ── floating background stickers (parallax) ─────── */
+  .sticker-bg {
+    position: fixed;
+    pointer-events: none;
+    z-index: 0;
+    will-change: transform;
+  }
+  .star { font-size: 28px; line-height: 1; font-family: 'Caprasimo', serif; color: var(--butter-deep); }
+  .blob {
+    border-radius: 50% 60% 55% 45% / 55% 45% 60% 40%;
+    opacity: 0.55;
+    filter: blur(0.5px);
+  }
+  .ring { border: 3px dashed var(--lilac-deep); border-radius: 50%; opacity: 0.4; }
+  .squiggle { color: var(--pink-deep); font-family: 'Caprasimo', serif; font-size: 40px; opacity: 0.6; }
+
+  /* ── page wrapper ─────────────────────────────────── */
+  .wrap {
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 60px 28px 80px;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ── HERO ─────────────────────────────────────────── */
+  .hero {
+    position: relative;
+    padding: 56px 36px 48px;
+    background: var(--paper);
+    border-radius: 32px;
+    border: 2px solid var(--ink);
+    box-shadow: 8px 8px 0 var(--lilac-deep);
+    text-align: center;
+    transform: rotate(-1deg);
+  }
+  .tape {
+    position: absolute;
+    width: 110px;
+    height: 28px;
+    background: rgba(255, 209, 102, 0.7);
+    border: 1px dashed rgba(58, 42, 85, 0.3);
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-3deg);
+  }
+  .hero .greeting {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink-soft);
+    margin-bottom: 8px;
+  }
+  .hero h1 {
+    font-family: 'Caprasimo', serif;
+    font-size: 64px;
+    line-height: 1;
+    margin: 0 0 4px;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .hero h1 .pop {
+    display: inline-block;
+    background: var(--pink);
+    padding: 0 12px;
+    border-radius: 16px;
+    transform: rotate(-2deg);
+    margin: 0 -2px;
+  }
+  .hero .role {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 22px;
+    color: var(--ink-soft);
+    margin: 14px 0 22px;
+  }
+  .hero .role .heart { color: var(--pink-deep); font-style: normal; }
+  .hero .badges { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
+  .badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    border: 1.5px solid var(--ink);
+    background: var(--paper);
+    transform: rotate(-1deg);
+  }
+  .badge:nth-child(2) { background: var(--butter); transform: rotate(2deg); }
+  .badge:nth-child(3) { background: var(--sky); transform: rotate(-2deg); }
+  .badge:nth-child(4) { background: var(--pink); transform: rotate(1deg); }
+  .badge:nth-child(5) { background: var(--mint); transform: rotate(-1deg); }
+
+  .hero-deco { position: absolute; pointer-events: none; font-family: 'Caprasimo', serif; }
+  .hero-deco.s1 { top: -18px; left: -22px; font-size: 36px; color: var(--pink-deep); transform: rotate(-15deg); }
+  .hero-deco.s2 { bottom: -24px; right: -18px; font-size: 32px; color: var(--butter-deep); transform: rotate(20deg); }
+  .hero-deco.s3 { top: 30%; right: -28px; width: 44px; height: 44px; background: var(--sky); border-radius: 50%; border: 2px solid var(--ink); }
+  .hero-deco.s4 { bottom: 20%; left: -28px; width: 36px; height: 36px; background: var(--mint); border: 2px solid var(--ink); border-radius: 8px; transform: rotate(15deg); }
+
+  /* ── SECTION ──────────────────────────────────── */
+  .section { margin-top: 72px; position: relative; }
+  .sec-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+  .sec-title {
+    font-family: 'Caprasimo', serif;
+    font-size: 32px;
+    line-height: 1.1;
+    margin: 0;
+  }
+  .sec-title .underline {
+    background: linear-gradient(transparent 65%, var(--butter) 65%);
+    padding: 0 4px;
+  }
+  .sec-emoji {
+    font-family: 'Caprasimo', serif;
+    color: var(--pink-deep);
+    font-size: 28px;
+    margin-left: auto;
+    transform: rotate(15deg);
+  }
+
+  /* ── PROJECTS — polaroid grid ───────────────────── */
+  .polaroids {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px 18px;
+  }
+  .polaroid {
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    padding: 12px 12px 16px;
+    box-shadow: 4px 4px 0 var(--ink);
+    transition: transform 0.25s ease;
+  }
+  .polaroid:nth-child(1) { transform: rotate(-2deg); box-shadow: 4px 4px 0 var(--pink-deep); }
+  .polaroid:nth-child(2) { transform: rotate(2deg); box-shadow: 4px 4px 0 var(--butter-deep); }
+  .polaroid:nth-child(3) { transform: rotate(1deg); box-shadow: 4px 4px 0 var(--sky-deep); }
+  .polaroid:nth-child(4) { transform: rotate(-1deg); box-shadow: 4px 4px 0 var(--lilac-deep); }
+  .polaroid:nth-child(5) { transform: rotate(-2deg); box-shadow: 4px 4px 0 var(--pink-deep); }
+  .polaroid:nth-child(6) { transform: rotate(2deg); box-shadow: 4px 4px 0 var(--butter-deep); }
+  .polaroid:hover { transform: rotate(0deg) scale(1.03); }
+
+  .pol-img {
+    aspect-ratio: 5 / 4;
+    border-radius: 4px;
+    border: 2px solid var(--ink);
+    margin-bottom: 12px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Caprasimo', serif;
+    font-size: 36px;
+    color: var(--ink);
+  }
+  .polaroid:nth-child(1) .pol-img { background: linear-gradient(135deg, var(--pink) 50%, var(--butter) 50%); }
+  .polaroid:nth-child(2) .pol-img { background: var(--lilac-2); }
+  .polaroid:nth-child(3) .pol-img { background: linear-gradient(135deg, var(--sky) 50%, var(--mint) 50%); }
+  .polaroid:nth-child(4) .pol-img { background: var(--butter); }
+  .polaroid:nth-child(5) .pol-img { background: linear-gradient(135deg, var(--mint) 50%, var(--pink) 50%); }
+  .polaroid:nth-child(6) .pol-img { background: var(--sky); }
+
+  .pol-img .glyph {
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+  }
+  .pol-name {
+    font-family: 'Caprasimo', serif;
+    font-size: 18px;
+    line-height: 1.1;
+    margin: 0 0 2px;
+  }
+  .pol-role {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin-bottom: 6px;
+  }
+  .pol-stack {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--ink);
+    background: var(--lilac-2);
+    padding: 3px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 6px;
+  }
+  .pol-note {
+    font-size: 12px;
+    line-height: 1.4;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  .polaroid { cursor: pointer; }
+  .pol-hint {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 6px;
+    opacity: 0.7;
+  }
+  .pol-hint::after { content: " →"; }
+
+  /* ── MODAL ─────────────────────────────────────── */
+  .modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(58, 42, 85, 0.45);
+    backdrop-filter: blur(4px);
+    z-index: 100;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+  .modal-backdrop.open { display: flex; opacity: 1; }
+  .modal {
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    border-radius: 28px;
+    box-shadow: 10px 10px 0 var(--lilac-deep);
+    max-width: 520px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 0;
+    position: relative;
+    transform: scale(0.92) rotate(-1deg);
+    transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+  }
+  .modal-backdrop.open .modal { transform: scale(1) rotate(0deg); }
+  .modal-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid var(--ink);
+    background: var(--paper);
+    font-family: 'Caprasimo', serif;
+    font-size: 18px;
+    color: var(--ink);
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    transition: transform 0.2s ease, background 0.2s ease;
+    z-index: 2;
+  }
+  .modal-close:hover { background: var(--pink); transform: rotate(90deg); }
+
+  .modal-cover {
+    aspect-ratio: 16 / 9;
+    border-bottom: 2px solid var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Caprasimo', serif;
+    font-size: 64px;
+    color: var(--ink);
+    border-radius: 26px 26px 0 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .modal-cover .glyph {
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    width: 96px; height: 96px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+  }
+  .modal-cover[data-c="1"] { background: linear-gradient(135deg, var(--pink) 50%, var(--butter) 50%); }
+  .modal-cover[data-c="2"] { background: var(--lilac-2); }
+  .modal-cover[data-c="3"] { background: linear-gradient(135deg, var(--sky) 50%, var(--mint) 50%); }
+  .modal-cover[data-c="4"] { background: var(--butter); }
+  .modal-cover[data-c="5"] { background: linear-gradient(135deg, var(--mint) 50%, var(--pink) 50%); }
+  .modal-cover[data-c="6"] { background: var(--sky); }
+
+  .modal-body { padding: 26px 28px 28px; }
+  .modal h3 {
+    font-family: 'Caprasimo', serif;
+    font-size: 32px;
+    line-height: 1.05;
+    margin: 0 0 4px;
+  }
+  .modal-kicker {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--pink-deep);
+    font-weight: 600;
+    margin-bottom: 22px;
+  }
+  .modal-section { margin-bottom: 22px; }
+  .modal-section:last-child { margin-bottom: 0; }
+  .modal-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--ink-soft);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .modal-label::before {
+    content: "";
+    width: 18px;
+    height: 2px;
+    background: var(--pink-deep);
+  }
+  .modal-desc {
+    font-family: 'Fraunces', serif;
+    font-size: 17px;
+    line-height: 1.5;
+    color: var(--ink);
+    margin: 0;
+    text-wrap: pretty;
+  }
+  .modal-role {
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--ink);
+    background: var(--butter);
+    border: 1.5px solid var(--ink);
+    padding: 8px 14px;
+    border-radius: 12px;
+    display: inline-block;
+  }
+  .modal-stack { display: flex; flex-wrap: wrap; gap: 6px; }
+  .modal-stack .pill {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    padding: 5px 11px;
+    border-radius: 999px;
+    border: 1.5px solid var(--ink);
+    background: var(--paper);
+  }
+  .modal-stack .pill:nth-child(3n+1) { background: var(--sky); }
+  .modal-stack .pill:nth-child(3n+2) { background: var(--mint); }
+  .modal-stack .pill:nth-child(3n+3) { background: var(--lilac-2); }
+
+  body.modal-open { overflow: hidden; }
+
+  /* ── TOOLS — mood-board grid ───────────────────── */
+  .tools-board {
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    border-radius: 24px;
+    padding: 26px 24px;
+    box-shadow: 6px 6px 0 var(--mint-deep);
+    position: relative;
+  }
+  .tools-board::before {
+    content: "★ daily drivers";
+    position: absolute;
+    top: -14px;
+    left: 24px;
+    background: var(--ink);
+    color: var(--paper);
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    padding: 4px 12px;
+    border-radius: 999px;
+    letter-spacing: 0.05em;
+    transform: rotate(-2deg);
+  }
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+  .tool-tile {
+    aspect-ratio: 1;
+    border: 2px solid var(--ink);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 8px 6px;
+    position: relative;
+    transition: transform 0.2s ease;
+  }
+  .tool-tile:hover { transform: translate(-2px, -2px) rotate(-2deg); }
+  .tool-tile .mark {
+    font-family: 'Caprasimo', serif;
+    font-size: 26px;
+    line-height: 1;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .tool-tile .nm {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    color: var(--ink);
+    line-height: 1.15;
+  }
+  .tool-tile.t-react { background: var(--sky); }
+  .tool-tile.t-next { background: var(--ink); color: var(--paper); }
+  .tool-tile.t-next .mark, .tool-tile.t-next .nm { color: var(--paper); }
+  .tool-tile.t-vue { background: var(--mint); }
+  .tool-tile.t-nuxt { background: var(--mint); }
+  .tool-tile.t-ts { background: var(--sky); }
+  .tool-tile.t-js { background: var(--butter); }
+  .tool-tile.t-tw { background: var(--sky); }
+  .tool-tile.t-pinia { background: var(--butter); }
+  .tool-tile.t-redux { background: var(--lilac-2); }
+  .tool-tile.t-ang { background: var(--pink); }
+  .tool-tile.t-laravel { background: var(--pink); }
+  .tool-tile.t-html { background: var(--butter); }
+
+  .tools-divider {
+    height: 0;
+    border-top: 2px dashed var(--lilac-deep);
+    margin: 22px 0 18px;
+    position: relative;
+  }
+  .tools-divider::after {
+    content: "+ supporting cast";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--paper);
+    padding: 0 12px;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+  .tools-extra {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+  .tool-pill {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    padding: 6px 12px;
+    border: 1.5px solid var(--ink);
+    border-radius: 999px;
+    background: var(--paper);
+    white-space: nowrap;
+  }
+  .tool-pill.c-p { background: var(--pink); }
+  .tool-pill.c-b { background: var(--butter); }
+  .tool-pill.c-s { background: var(--sky); }
+  .tool-pill.c-m { background: var(--mint); }
+  .tool-pill.c-l { background: var(--lilac-2); }
+
+  /* ── EXPERIENCE timeline ──────────────────────── */
+  .timeline {
+    position: relative;
+    padding-left: 32px;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 11px;
+    top: 16px;
+    bottom: 16px;
+    width: 3px;
+    background: repeating-linear-gradient(to bottom, var(--lilac-deep) 0 8px, transparent 8px 14px);
+  }
+  .job { position: relative; margin-bottom: 28px; }
+  .job:last-child { margin-bottom: 0; }
+  .job::before {
+    content: "";
+    position: absolute;
+    left: -32px;
+    top: 18px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 2px solid var(--ink);
+    background: var(--butter);
+  }
+  .job:nth-child(2)::before { background: var(--pink); }
+  .job:nth-child(3)::before { background: var(--sky); }
+
+  .job-card {
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    border-radius: 18px;
+    padding: 18px 20px;
+    box-shadow: 4px 4px 0 var(--lilac-deep);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .job-card:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--lilac-deep); }
+  .job-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 6px;
+  }
+  .job-title {
+    font-family: 'Caprasimo', serif;
+    font-size: 20px;
+    margin: 0;
+    line-height: 1.15;
+  }
+  .job-date {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    background: var(--lilac-2);
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1.5px solid var(--ink);
+    white-space: nowrap;
+  }
+  .job-co {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--pink-deep);
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+  .job ul { list-style: none; padding: 0; margin: 0; }
+  .job ul li {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink);
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 8px;
+    text-wrap: pretty;
+  }
+  .job ul li::before {
+    content: "✿";
+    position: absolute;
+    left: 0;
+    top: 1px;
+    color: var(--pink-deep);
+    font-size: 12px;
+  }
+  .job:nth-child(2) ul li::before { content: "★"; color: var(--butter-deep); }
+  .job:nth-child(3) ul li::before { content: "♥"; color: var(--pink-deep); }
+  .job ul li b { background: var(--butter); padding: 0 3px; border-radius: 3px; font-weight: 700; }
+  .job ul li i {
+    color: var(--ink);
+    background: var(--pink);
+    padding: 0 5px;
+    border-radius: 4px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+  }
+
+  /* ── CONTACT CARD (bottom) ────────────────────── */
+  .contact-card {
+    margin-top: 80px;
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    border-radius: 28px;
+    padding: 36px 32px 32px;
+    position: relative;
+    box-shadow: 8px 8px 0 var(--pink-deep);
+    text-align: center;
+  }
+  .contact-card .tag {
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-2deg);
+    background: var(--butter);
+    border: 2px solid var(--ink);
+    padding: 6px 18px;
+    border-radius: 999px;
+    font-family: 'Caprasimo', serif;
+    font-size: 14px;
+    font-style: italic;
+    color: var(--ink);
+  }
+  .contact-card h2 {
+    font-family: 'Caprasimo', serif;
+    font-size: 34px;
+    margin: 6px 0 4px;
+    line-height: 1.05;
+    text-wrap: balance;
+  }
+  .contact-card h2 .heart { color: var(--pink-deep); }
+  .contact-card .sub {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--ink-soft);
+    margin: 0 0 22px;
+  }
+
+  .contact-rows {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    text-align: left;
+    margin-bottom: 24px;
+  }
+  .c-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border: 1.5px solid var(--ink);
+    border-radius: 14px;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--ink);
+    text-decoration: none;
+    background: var(--paper);
+    transition: transform 0.2s ease;
+  }
+  .c-item:hover { transform: translate(-2px, -2px); }
+  .c-item .ico {
+    width: 26px;
+    height: 26px;
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+    font-family: 'Caprasimo', serif;
+    font-size: 14px;
+    color: var(--ink);
+    border: 1.5px solid var(--ink);
+    flex-shrink: 0;
+  }
+  .c-item.phone .ico { background: var(--mint); }
+  .c-item.mail .ico { background: var(--pink); }
+  .c-item.loc .ico { background: var(--sky); }
+  .c-item.port .ico { background: var(--butter); }
+  .c-item .lbl {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 10px;
+    color: var(--ink-soft);
+    display: block;
+    margin-bottom: 1px;
+    text-transform: lowercase;
+    letter-spacing: 0;
+  }
+  .c-item .val { display: block; font-weight: 500; word-break: break-word; }
+
+  .cta-row {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 14px 26px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-family: 'Nunito';
+    font-weight: 800;
+    font-size: 14px;
+    border: 2px solid var(--ink);
+    box-shadow: 4px 4px 0 var(--butter-deep);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .cta:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--butter-deep); }
+  .cta .arrow {
+    font-family: 'Caprasimo', serif;
+    transition: transform 0.2s ease;
+  }
+  .cta:hover .arrow { transform: translateX(4px); }
+  .cta.secondary {
+    background: var(--paper);
+    color: var(--ink);
+    box-shadow: 4px 4px 0 var(--lilac-deep);
+  }
+  .cta.secondary:hover { box-shadow: 6px 6px 0 var(--lilac-deep); }
+
+  .contact-card .signoff {
+    margin-top: 22px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+
+  /* ── reveal on scroll ─────────────────────────── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.8, 0.3, 1);
+  }
+  .reveal.in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* responsive */
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 48px; }
+    .hero { padding: 44px 22px 36px; transform: none; }
+    .polaroids { grid-template-columns: 1fr; }
+    .tools-grid { grid-template-columns: repeat(3, 1fr); }
+    .contact-rows { grid-template-columns: 1fr; }
+    .contact-card h2 { font-size: 26px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Floating stickers (parallax targets) -->
+<div class="sticker-bg star" data-speed="0.3" style="top: 8%; left: 4%;">✦</div>
+<div class="sticker-bg star" data-speed="0.5" style="top: 22%; right: 6%; color: var(--pink-deep); font-size: 22px;">✦</div>
+<div class="sticker-bg blob" data-speed="0.2" style="top: 38%; left: 2%; width: 80px; height: 90px; background: var(--pink);"></div>
+<div class="sticker-bg ring" data-speed="0.4" style="top: 52%; right: 3%; width: 70px; height: 70px;"></div>
+<div class="sticker-bg blob" data-speed="0.25" style="top: 70%; left: 6%; width: 60px; height: 70px; background: var(--butter);"></div>
+<div class="sticker-bg squiggle" data-speed="0.6" style="top: 64%; right: 5%;">⌇</div>
+<div class="sticker-bg star" data-speed="0.35" style="top: 86%; left: 5%; color: var(--sky-deep); font-size: 26px;">✦</div>
+<div class="sticker-bg blob" data-speed="0.4" style="top: 90%; right: 4%; width: 60px; height: 60px; background: var(--sky);"></div>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <header class="hero reveal">
+    <span class="tape"></span>
+    <span class="hero-deco s1">✿</span>
+    <span class="hero-deco s2">★</span>
+    <span class="hero-deco s3"></span>
+    <span class="hero-deco s4"></span>
+
+    <div class="greeting">∗ ⋆ portfolio &amp; resume ⋆ ∗</div>
+    <h1>i'm <span class="pop">ada</span><br/>꒰a frontend dev꒱</h1>
+    <p class="role">crafting clean, performant interfaces <span class="heart">♥</span> with care</p>
+
+    <div class="badges">
+      <span class="badge">React</span>
+      <span class="badge">Next.js</span>
+      <span class="badge">Vue</span>
+      <span class="badge">Nuxt</span>
+      <span class="badge">TypeScript</span>
+    </div>
+  </header>
+
+  <!-- PROJECTS -->
+  <section class="section reveal">
+    <div class="sec-head">
+      <h2 class="sec-title">selected <span class="underline">projects</span></h2>
+      <span class="sec-emoji">✦</span>
+    </div>
+
+    <div class="polaroids" id="polaroids">
+      <div class="polaroid" data-project="carolina" tabindex="0" role="button" aria-label="Open Carolina details">
+        <div class="pol-img"><span class="glyph">C</span></div>
+        <h4 class="pol-name">Carolina</h4>
+        <div class="pol-role">job portal · frontend lead</div>
+        <span class="pol-stack">Nuxt · REST · SQL</span>
+        <div class="pol-hint">view details</div>
+      </div>
+
+      <div class="polaroid" data-project="cherry" tabindex="0" role="button" aria-label="Open Cherry details">
+        <div class="pol-img"><span class="glyph">Ch</span></div>
+        <h4 class="pol-name">Cherry</h4>
+        <div class="pol-role">HRIS revamp · frontend lead</div>
+        <span class="pol-stack">AngularJS · REST · SQL</span>
+        <div class="pol-hint">view details</div>
+      </div>
+
+      <div class="polaroid" data-project="redkendi" tabindex="0" role="button" aria-label="Open Redkendi details">
+        <div class="pol-img"><span class="glyph">R</span></div>
+        <h4 class="pol-name">Redkendi</h4>
+        <div class="pol-role">microsite · frontend lead</div>
+        <span class="pol-stack">Nuxt · REST</span>
+        <div class="pol-hint">view details</div>
+      </div>
+
+      <div class="polaroid" data-project="exclolab" tabindex="0" role="button" aria-label="Open ExcloLab details">
+        <div class="pol-img"><span class="glyph">E</span></div>
+        <h4 class="pol-name">ExcloLab</h4>
+        <div class="pol-role">marketing site · frontend dev</div>
+        <span class="pol-stack">Next.js</span>
+        <div class="pol-hint">view details</div>
+      </div>
+
+      <div class="polaroid" data-project="elmu" tabindex="0" role="button" aria-label="Open Elmu.id details">
+        <div class="pol-img"><span class="glyph">El</span></div>
+        <h4 class="pol-name">Elmu.id</h4>
+        <div class="pol-role">edu platform · frontend dev</div>
+        <span class="pol-stack">React · Next</span>
+        <div class="pol-hint">view details</div>
+      </div>
+
+      <div class="polaroid" data-project="kalla" tabindex="0" role="button" aria-label="Open Kalla Friends details">
+        <div class="pol-img"><span class="glyph">K</span></div>
+        <h4 class="pol-name">Kalla Friends</h4>
+        <div class="pol-role">back-office · intern</div>
+        <span class="pol-stack">React · Inertia.js</span>
+        <div class="pol-hint">view details</div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- TOOLS — mood-board grid -->
+  <section class="section reveal">
+    <div class="sec-head">
+      <h2 class="sec-title">tools of the <span class="underline">trade</span></h2>
+      <span class="sec-emoji">★</span>
+    </div>
+
+    <div class="tools-board">
+      <div class="tools-grid">
+        <div class="tool-tile t-react"><div class="mark">⚛</div><div class="nm">React</div></div>
+        <div class="tool-tile t-next"><div class="mark">N</div><div class="nm">Next.js</div></div>
+        <div class="tool-tile t-vue"><div class="mark">V</div><div class="nm">Vue.js</div></div>
+        <div class="tool-tile t-nuxt"><div class="mark">Nx</div><div class="nm">Nuxt.js</div></div>
+        <div class="tool-tile t-ts"><div class="mark">Ts</div><div class="nm">TypeScript</div></div>
+        <div class="tool-tile t-js"><div class="mark">Js</div><div class="nm">JavaScript</div></div>
+        <div class="tool-tile t-tw"><div class="mark">≋</div><div class="nm">Tailwind</div></div>
+        <div class="tool-tile t-pinia"><div class="mark">π</div><div class="nm">Pinia</div></div>
+        <div class="tool-tile t-redux"><div class="mark">⟲</div><div class="nm">Redux</div></div>
+        <div class="tool-tile t-ang"><div class="mark">A</div><div class="nm">AngularJS</div></div>
+        <div class="tool-tile t-laravel"><div class="mark">L</div><div class="nm">Laravel</div></div>
+        <div class="tool-tile t-html"><div class="mark">&lt;/&gt;</div><div class="nm">HTML / CSS</div></div>
+      </div>
+
+      <div class="tools-divider"></div>
+
+      <div class="tools-extra">
+        <span class="tool-pill c-m">Python</span>
+        <span class="tool-pill c-l">REST API</span>
+        <span class="tool-pill c-b">MySQL</span>
+        <span class="tool-pill c-p">Firebase</span>
+        <span class="tool-pill c-s">AWS · S3 / EC2 / RDS</span>
+        <span class="tool-pill c-m">BigQuery</span>
+        <span class="tool-pill c-b">Tableau</span>
+        <span class="tool-pill c-p">Looker Studio</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section reveal">
+    <div class="sec-head">
+      <h2 class="sec-title">recent <span class="underline">experience</span></h2>
+      <span class="sec-emoji">♡</span>
+    </div>
+
+    <div class="timeline">
+
+      <div class="job">
+        <div class="job-card">
+          <div class="job-meta">
+            <h3 class="job-title">Frontend Developer</h3>
+            <span class="job-date">Dec 2023 — now</span>
+          </div>
+          <div class="job-co">PT Integra Solusi Mandiri</div>
+          <ul>
+            <li>delivered <b>3 enterprise web apps</b> end-to-end — <i>Carolina</i> (job portal), <i>Cherry</i> (HRIS revamp), and <i>Redkendi</i> (microsite) — owning the frontend stack across Nuxt, AngularJS, REST &amp; SQL</li>
+            <li>defined application architecture, frontend structure &amp; business flows for each product to keep them scalable and maintainable</li>
+            <li>acted as <b>frontend lead</b>, partnering with UI/UX, backend &amp; BA teams to translate complex requirements into production-ready interfaces</li>
+            <li>kept performance &amp; responsive design tight across every release</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="job-card">
+          <div class="job-meta">
+            <h3 class="job-title">Frontend Developer · ExcloLab</h3>
+            <span class="job-date">Jul — Oct 2025</span>
+          </div>
+          <div class="job-co">PT Pengendali Sistem Nusantara · project-based</div>
+          <ul>
+            <li>tuned the site to <b>Lighthouse 100 desktop / 90 mobile</b> — strong scores for speed, accessibility &amp; SEO</li>
+            <li>initialized the full project from scratch with <b>Next.js</b></li>
+            <li>implemented a comprehensive SEO strategy covering technical SEO, metadata &amp; search visibility</li>
+            <li>turned UI/UX designs into responsive pages and integrated RESTful APIs for dynamic content</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="job-card">
+          <div class="job-meta">
+            <h3 class="job-title">Frontend Developer</h3>
+            <span class="job-date">Aug 2022 — Aug 2023</span>
+          </div>
+          <div class="job-co">Elektronik Ilmu Indonesia · Elmu.id</div>
+          <ul>
+            <li>improved <b>user engagement by 30%+</b> through targeted UI optimization and frontend performance work on a React / Next public site</li>
+            <li>integrated a custom in-site sales workflow to replace a manual Google Forms process — better conversions, fewer steps</li>
+            <li>iterated on user testing &amp; feedback for steady, detail-focused improvements</li>
+            <li>collaborated cross-functionally to refine domain models &amp; business processes</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT CARD -->
+  <section class="contact-card reveal">
+    <span class="tag">⋆ get in touch ⋆</span>
+    <h2>let's build something <span class="heart">♥</span> together</h2>
+    <p class="sub">open to frontend roles, freelance &amp; collaborations</p>
+
+    <div class="contact-rows">
+      <a class="c-item phone" href="tel:+6282177538199">
+        <span class="ico">☏</span>
+        <span><span class="lbl">phone</span><span class="val">+62 821 7753 8199</span></span>
+      </a>
+      <a class="c-item mail" href="mailto:adawiyyahlatifah@gmail.com">
+        <span class="ico">✉</span>
+        <span><span class="lbl">email</span><span class="val">adawiyyahlatifah@gmail.com</span></span>
+      </a>
+      <a class="c-item loc">
+        <span class="ico">◎</span>
+        <span><span class="lbl">based in</span><span class="val">Palembang, Indonesia</span></span>
+      </a>
+      <a class="c-item port" href="#">
+        <span class="ico">★</span>
+        <span><span class="lbl">portfolio</span><span class="val">view my work</span></span>
+      </a>
+    </div>
+
+    <div class="cta-row">
+      <a class="cta" href="https://www.linkedin.com/in/adawiyyahlatifah" target="_blank" rel="noopener">
+        connect on linkedin <span class="arrow">→</span>
+      </a>
+      <a class="cta secondary" href="mailto:adawiyyahlatifah@gmail.com">
+        send a note
+      </a>
+    </div>
+
+    <div class="signoff">⋆ thanks for stopping by ⋆</div>
+  </section>
+
+</div>
+
+<!-- MODAL (must live outside any transformed ancestor) -->
+<div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal">
+    <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+    <div class="modal-cover" id="modalCover"><span class="glyph" id="modalGlyph">C</span></div>
+    <div class="modal-body">
+      <h3 id="modalTitle">Project</h3>
+      <div class="modal-kicker" id="modalKicker">role · type</div>
+
+      <div class="modal-section">
+        <div class="modal-label">about</div>
+        <p class="modal-desc" id="modalDesc">—</p>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-label">my role</div>
+        <span class="modal-role" id="modalRole">—</span>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-label">tech stack</div>
+        <div class="modal-stack" id="modalStack"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ── Project data ──────────────────────────────────
+  const PROJECTS = {
+    carolina: {
+      title: 'Carolina',
+      kicker: 'job portal · frontend lead',
+      cover: 1, glyph: 'C',
+      desc: 'A web-based job portal connecting candidates with companies — built end-to-end with a focus on clean architecture and smooth UX.',
+      role: 'Frontend Lead',
+      stack: ['Nuxt.js', 'JavaScript', 'REST API', 'SQL', 'Tailwind']
+    },
+    cherry: {
+      title: 'Cherry',
+      kicker: 'HRIS revamp · frontend lead',
+      cover: 2, glyph: 'Ch',
+      desc: 'Full revamp of an internal HRIS platform — modernized the frontend stack while preserving complex business logic.',
+      role: 'Frontend Lead',
+      stack: ['AngularJS', 'JavaScript', 'REST API', 'SQL']
+    },
+    redkendi: {
+      title: 'Redkendi',
+      kicker: 'microsite · frontend lead',
+      cover: 3, glyph: 'R',
+      desc: 'A product microsite shipped to production — owned the full frontend stack from architecture to deploy.',
+      role: 'Frontend Lead',
+      stack: ['Nuxt.js', 'JavaScript', 'REST API', 'Tailwind']
+    },
+    exclolab: {
+      title: 'ExcloLab',
+      kicker: 'marketing site · frontend dev',
+      cover: 4, glyph: 'E',
+      desc: 'Marketing website built from scratch with a focus on speed, accessibility & SEO — Lighthouse 100 desktop / 90 mobile.',
+      role: 'Frontend Developer',
+      stack: ['Next.js', 'TypeScript', 'Tailwind', 'REST API', 'SEO']
+    },
+    elmu: {
+      title: 'Elmu.id',
+      kicker: 'edu platform · frontend dev',
+      cover: 5, glyph: 'El',
+      desc: 'Public education platform — drove +30% user engagement through targeted UI optimization and a custom in-site sales workflow.',
+      role: 'Frontend Developer',
+      stack: ['React.js', 'Next.js', 'JavaScript', 'REST API']
+    },
+    kalla: {
+      title: 'Kalla Friends',
+      kicker: 'back-office app · intern',
+      cover: 6, glyph: 'K',
+      desc: 'Back-office application for the Kalla Friends app — built reusable components for key project data; awarded Best Team across cohorts.',
+      role: 'Frontend Engineer Intern',
+      stack: ['React.js', 'Inertia.js', 'Laravel']
+    }
+  };
+
+  // ── Modal logic ───────────────────────────────────
+  const backdrop = document.getElementById('modalBackdrop');
+  const closeBtn = document.getElementById('modalClose');
+  const elTitle = document.getElementById('modalTitle');
+  const elKicker = document.getElementById('modalKicker');
+  const elDesc = document.getElementById('modalDesc');
+  const elRole = document.getElementById('modalRole');
+  const elStack = document.getElementById('modalStack');
+  const elCover = document.getElementById('modalCover');
+  const elGlyph = document.getElementById('modalGlyph');
+
+  function openProject(key) {
+    const p = PROJECTS[key];
+    if (!p) return;
+    elTitle.textContent = p.title;
+    elKicker.textContent = p.kicker;
+    elDesc.textContent = p.desc;
+    elRole.textContent = p.role;
+    elCover.dataset.c = p.cover;
+    elGlyph.textContent = p.glyph;
+    elStack.innerHTML = p.stack.map(s => `<span class="pill">${s}</span>`).join('');
+    backdrop.classList.add('open');
+    document.body.classList.add('modal-open');
+  }
+  function closeModal() {
+    backdrop.classList.remove('open');
+    document.body.classList.remove('modal-open');
+  }
+  document.querySelectorAll('.polaroid').forEach(card => {
+    card.addEventListener('click', () => openProject(card.dataset.project));
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openProject(card.dataset.project); }
+    });
+  });
+  closeBtn.addEventListener('click', closeModal);
+  backdrop.addEventListener('click', (e) => { if (e.target === backdrop) closeModal(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+  // Parallax for fixed background stickers
+  function onScroll() {
+    const y = window.scrollY;
+    document.querySelectorAll('.sticker-bg').forEach(el => {
+      const speed = parseFloat(el.dataset.speed || 0.3);
+      el.style.transform = `translateY(${-y * speed}px) rotate(${y * speed * 0.05}deg)`;
+    });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
