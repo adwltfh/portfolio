@@ -2,7 +2,7 @@ import FloatingStickers from "@/components/FloatingStickers";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Adawiyyah Latifah ⋆˚࿔ resume | Frontend Developer",
+  title: "Adawiyyah's ⋆˚࿔ resume | Frontend Developer",
   description:
     "Portfolio & resume of Adawiyyah Latifah — frontend developer crafting clean, performant interfaces with React and Next.js. Projects, experience, and contact info.",
   keywords: [

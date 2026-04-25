@@ -32,7 +32,7 @@ const dmMono = DM_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Adawiyyah Latifah ⋆˚࿔ resume',
+  title: "Adawiyyah's ⋆˚࿔ resume",
   description: 'Frontend developer portfolio & resume — crafting clean, performant interfaces',
 }
 

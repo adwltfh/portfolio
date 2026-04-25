@@ -40,7 +40,7 @@ export default function Hero() {
       <h1 className="font-caprasimo text-[64px] sm:text-[48px] leading-none text-resume-ink tracking-[-0.01em] mb-1 mt-0">
         i&apos;m{' '}
         <span className="inline-block bg-resume-pink px-3 rounded-2xl -rotate-2 mx-[-2px]">
-          ada
+          adawiyyah
         </span>
         <br />
         ꒰a frontend dev꒱
