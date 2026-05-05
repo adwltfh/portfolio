@@ -52,9 +52,13 @@ const PILL_COLORS = ["bg-resume-sky", "bg-resume-mint", "bg-resume-lilac-2"];
 export default function Projects() {
   const [open, setOpen] = useState(false);
   const [project, setProject] = useState<Project | null>(null);
+  const [carouselIndex, setCarouselIndex] = useState(0);
+  const [imgLoaded, setImgLoaded] = useState(false);
 
   const openProject = useCallback((p: Project) => {
     setProject(p);
+    setCarouselIndex(0);
+    setImgLoaded(false);
     setOpen(true);
     document.body.classList.add("modal-open");
   }, []);
@@ -78,7 +82,7 @@ export default function Projects() {
       <section className="section mt-[72px] relative reveal">
         <div className="flex items-center gap-[14px] mb-6">
           <h2 className="font-caprasimo text-[32px] leading-[1.1] m-0">
-            selected{" "}
+            other{" "}
             <span
               style={{
                 background: "linear-gradient(transparent 65%, #fff3a8 65%)",
@@ -114,12 +118,23 @@ export default function Projects() {
               >
                 {/* Polaroid image area */}
                 <div
-                  className="aspect-[5/4] rounded-[4px] border-2 border-resume-ink mb-3 flex items-center justify-center font-caprasimo text-[36px] text-resume-ink overflow-hidden relative"
+                  className="aspect-[5/4] rounded-[4px] border-2 border-resume-ink mb-3 overflow-hidden relative"
                   style={{ background: cfg.imgBg }}
                 >
-                  <span className="bg-resume-paper border-2 border-resume-ink w-16 h-16 rounded-full flex items-center justify-center italic">
-                    {p.glyph}
+                  {/* Glyph — visible while image is loading / as fallback */}
+                  <span className="absolute inset-0 flex items-center justify-center">
+                    <span className="bg-resume-paper border-2 border-resume-ink w-16 h-16 rounded-full flex items-center justify-center font-caprasimo italic">
+                      {p.glyph}
+                    </span>
                   </span>
+                  {/* Image sits on top once loaded */}
+                  {p.images?.[0] && (
+                    <img
+                      src={p.images[0]}
+                      alt={p.title}
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                  )}
                 </div>
 
                 <h4 className="font-caprasimo text-[18px] leading-[1.1] mb-[2px]">
@@ -129,7 +144,7 @@ export default function Projects() {
                   {p.kicker}
                 </div>
                 <span className="font-dm-mono text-[10px] text-resume-ink bg-resume-lilac-2 px-2 py-[3px] rounded-[4px] inline-block mb-[6px]">
-                  {p.stack.slice(0, 3).join(" · ")}
+                  {p.stack.slice(0, 4).join(" · ")}
                 </span>
                 <div className="font-dm-mono text-[9px] text-resume-ink-soft uppercase tracking-[0.1em] mt-[6px] opacity-70 after:content-['_→']">
                   view details
@@ -142,7 +157,7 @@ export default function Projects() {
 
       {/* Modal */}
       <div
-        className={`fixed inset-0 z-[100] flex items-center justify-center p-6 transition-opacity duration-300 ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
+        className={`fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-6 transition-opacity duration-300 ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
         style={{
           background: "rgba(58,42,85,0.45)",
           backdropFilter: "blur(4px)",
@@ -170,20 +185,97 @@ export default function Projects() {
           {/* Cover */}
           {project && (
             <>
-              <div
-                className="aspect-video border-b-2 border-resume-ink flex items-center justify-center font-caprasimo text-[64px] text-resume-ink rounded-t-[26px] overflow-hidden"
-                style={{ background: COVER_BG[project.cover] }}
-              >
-                <span className="bg-resume-paper border-2 border-resume-ink w-24 h-24 rounded-full flex items-center justify-center italic">
-                  {project.glyph}
-                </span>
-              </div>
+              {/* Carousel cover */}
+              {project &&
+                (() => {
+                  const images = project.images ?? [];
+                  const hasImages = images.length > 0;
+                  const hasMultiple = images.length > 1;
+                  const bg = COVER_BG[project.cover];
+
+                  const goTo = (idx: number) => {
+                    setCarouselIndex(idx);
+                    setImgLoaded(false);
+                  };
+                  const goPrev = (e: React.MouseEvent) => {
+                    e.stopPropagation();
+                    goTo((carouselIndex - 1 + images.length) % images.length);
+                  };
+                  const goNext = (e: React.MouseEvent) => {
+                    e.stopPropagation();
+                    goTo((carouselIndex + 1) % images.length);
+                  };
+
+                  return (
+                    <div
+                      className="relative aspect-video border-b-2 border-resume-ink rounded-t-[26px] overflow-hidden"
+                      style={{ background: bg }}
+                    >
+                      {/* Actual image */}
+                      {hasImages && (
+                        <img
+                          key={`${project.key}-${carouselIndex}`}
+                          src={images[carouselIndex]}
+                          alt={`${project.title} preview ${carouselIndex + 1}`}
+                          className={`absolute inset-0 w-full h-full ${project.imageFit === "contain" ? "object-contain" : "object-cover"} transition-opacity duration-500 ${imgLoaded ? "opacity-100" : "opacity-0"}`}
+                          onLoad={() => setImgLoaded(true)}
+                        />
+                      )}
+
+                      {/* Glyph — loading state / fallback when no images */}
+                      <div
+                        className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${!hasImages || !imgLoaded ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+                      >
+                        <span className="bg-resume-paper border-2 border-resume-ink w-24 h-24 rounded-full flex items-center justify-center font-caprasimo text-[32px] italic select-none">
+                          {project.glyph}
+                        </span>
+                      </div>
+
+                      {/* Left / Right nav */}
+                      {hasMultiple && (
+                        <>
+                          <button
+                            onClick={goPrev}
+                            className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full border-2 border-resume-ink bg-resume-paper font-caprasimo text-[16px] grid place-items-center opacity-30 hover:opacity-75 focus-visible:opacity-75 transition-opacity duration-200 z-10"
+                            aria-label="Previous image"
+                          >
+                            ←
+                          </button>
+                          <button
+                            onClick={goNext}
+                            className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full border-2 border-resume-ink bg-resume-paper font-caprasimo text-[16px] grid place-items-center opacity-30 hover:opacity-75 focus-visible:opacity-75 transition-opacity duration-200 z-10"
+                            aria-label="Next image"
+                          >
+                            →
+                          </button>
+                        </>
+                      )}
+
+                      {/* Dot indicators */}
+                      {hasMultiple && (
+                        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-[6px] z-10">
+                          {images.map((_, i) => (
+                            <button
+                              key={i}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                goTo(i);
+                              }}
+                              className={`w-[7px] h-[7px] rounded-full border border-resume-ink transition-all duration-200 ${i === carouselIndex ? "bg-resume-ink opacity-80 scale-110" : "bg-resume-paper opacity-35 hover:opacity-60"}`}
+                              aria-label={`Go to image ${i + 1}`}
+                            />
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })()}
 
               {/* Body */}
-              <div className="p-[26px_28px_28px]">
+              <div className="p-[16px_18px_20px] sm:p-[26px_28px_28px]">
                 <h3
                   id="modal-title"
-                  className="font-caprasimo text-[32px] leading-[1.05] mb-1"
+                  className="font-caprasimo text-[24px] sm:text-[32px] leading-[1.05] mb-1"
                 >
                   {project.title}
                 </h3>

@@ -53,6 +53,7 @@ export const metadata: Metadata = {
 import ScrollReveal from "@/components/ScrollReveal";
 import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
+import LiveProducts from "@/components/LiveProducts";
 import Tools from "@/components/Tools";
 import Experience from "@/components/Experience";
 import Contact from "@/components/Contact";
@@ -64,6 +65,7 @@ export default function Page() {
       <ScrollReveal />
       <main className="max-w-[740px] mx-auto px-7 pt-[60px] pb-20 relative z-[2] sm:px-4 sm:pt-10 sm:pb-12">
         <Hero />
+        {/* <LiveProducts /> */}
         <Projects />
         <Tools />
         <Experience />
