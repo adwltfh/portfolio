@@ -56,22 +56,24 @@ export default function LiveProducts() {
             products
           </span>
         </h2>
-        <div className="ml-auto flex gap-2">
-          <button
-            onClick={() => scroll("left")}
-            className="w-9 h-9 rounded-full border-2 border-resume-ink bg-resume-paper font-caprasimo text-[16px] grid place-items-center opacity-35 hover:opacity-80 focus-visible:opacity-80 transition-opacity duration-200 shadow-[2px_2px_0_#b59cf0]"
-            aria-label="Scroll left"
-          >
-            ←
-          </button>
-          <button
-            onClick={() => scroll("right")}
-            className="w-9 h-9 rounded-full border-2 border-resume-ink bg-resume-paper font-caprasimo text-[16px] grid place-items-center opacity-35 hover:opacity-80 focus-visible:opacity-80 transition-opacity duration-200 shadow-[2px_2px_0_#b59cf0]"
-            aria-label="Scroll right"
-          >
-            →
-          </button>
-        </div>
+        {LIVE_PRODUCTS.length > 1 && (
+          <div className="ml-auto flex gap-2">
+            <button
+              onClick={() => scroll("left")}
+              className="w-9 h-9 rounded-full border-2 border-resume-ink bg-resume-paper font-caprasimo text-[16px] grid place-items-center opacity-35 hover:opacity-80 focus-visible:opacity-80 transition-opacity duration-200 shadow-[2px_2px_0_#b59cf0]"
+              aria-label="Scroll left"
+            >
+              ←
+            </button>
+            <button
+              onClick={() => scroll("right")}
+              className="w-9 h-9 rounded-full border-2 border-resume-ink bg-resume-paper font-caprasimo text-[16px] grid place-items-center opacity-35 hover:opacity-80 focus-visible:opacity-80 transition-opacity duration-200 shadow-[2px_2px_0_#b59cf0]"
+              aria-label="Scroll right"
+            >
+              →
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Scroll container */}
