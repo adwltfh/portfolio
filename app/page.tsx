@@ -65,7 +65,7 @@ export default function Page() {
       <ScrollReveal />
       <main className="max-w-[740px] mx-auto px-7 pt-[60px] pb-20 relative z-[2] sm:px-4 sm:pt-10 sm:pb-12">
         <Hero />
-        {/* <LiveProducts /> */}
+        <LiveProducts />
         <Projects />
         <Tools />
         <Experience />

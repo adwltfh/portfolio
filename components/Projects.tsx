@@ -54,6 +54,8 @@ export default function Projects() {
   const [project, setProject] = useState<Project | null>(null);
   const [carouselIndex, setCarouselIndex] = useState(0);
   const [imgLoaded, setImgLoaded] = useState(false);
+  const [zoomOpen, setZoomOpen] = useState(false);
+  const [zoomIndex, setZoomIndex] = useState(0);
 
   const openProject = useCallback((p: Project) => {
     setProject(p);
@@ -68,13 +70,32 @@ export default function Projects() {
     document.body.classList.remove("modal-open");
   }, []);
 
+  const openZoom = useCallback((idx: number) => {
+    setZoomIndex(idx);
+    setZoomOpen(true);
+  }, []);
+
+  const closeZoom = useCallback(() => setZoomOpen(false), []);
+
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
+      if (zoomOpen) {
+        if (e.key === "Escape") {
+          closeZoom();
+          return;
+        }
+        const images = project?.images ?? [];
+        if (e.key === "ArrowLeft")
+          setZoomIndex((i) => (i - 1 + images.length) % images.length);
+        if (e.key === "ArrowRight")
+          setZoomIndex((i) => (i + 1) % images.length);
+        return;
+      }
       if (e.key === "Escape") closeModal();
     };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
-  }, [closeModal]);
+  }, [closeModal, closeZoom, zoomOpen, project]);
 
   return (
     <>
@@ -217,8 +238,12 @@ export default function Projects() {
                           key={`${project.key}-${carouselIndex}`}
                           src={images[carouselIndex]}
                           alt={`${project.title} preview ${carouselIndex + 1}`}
-                          className={`absolute inset-0 w-full h-full ${project.imageFit === "contain" ? "object-contain" : "object-cover"} transition-opacity duration-500 ${imgLoaded ? "opacity-100" : "opacity-0"}`}
+                          className={`absolute inset-0 w-full h-full ${project.imageFit === "contain" ? "object-contain" : "object-cover"} transition-opacity duration-500 ${imgLoaded ? "opacity-100" : "opacity-0"} cursor-zoom-in`}
                           onLoad={() => setImgLoaded(true)}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            openZoom(carouselIndex);
+                          }}
                         />
                       )}
 
@@ -315,6 +340,75 @@ export default function Projects() {
           )}
         </div>
       </div>
+      {/* Lightbox */}
+      {zoomOpen && project?.images && (
+        <div
+          className="fixed inset-0 z-[200] flex items-center justify-center"
+          style={{
+            background: "rgba(20,12,35,0.92)",
+            backdropFilter: "blur(8px)",
+          }}
+          onClick={closeZoom}
+        >
+          {/* Close */}
+          <button
+            className="absolute top-4 right-4 w-10 h-10 rounded-full border-2 border-resume-ink bg-resume-paper font-caprasimo text-[20px] grid place-items-center transition-transform duration-200 hover:rotate-90 z-10"
+            onClick={(e) => {
+              e.stopPropagation();
+              closeZoom();
+            }}
+            aria-label="Close zoom"
+          >
+            ×
+          </button>
+
+          {/* Prev */}
+          {project.images.length > 1 && (
+            <button
+              className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full border-2 border-resume-ink bg-resume-paper font-caprasimo text-[18px] grid place-items-center opacity-60 hover:opacity-100 transition-opacity z-10"
+              onClick={(e) => {
+                e.stopPropagation();
+                setZoomIndex(
+                  (i) =>
+                    (i - 1 + project.images!.length) % project.images!.length,
+                );
+              }}
+              aria-label="Previous image"
+            >
+              ←
+            </button>
+          )}
+
+          {/* Image */}
+          <img
+            src={project.images[zoomIndex]}
+            alt={`${project.title} ${zoomIndex + 1}`}
+            className="max-w-[92vw] max-h-[88vh] object-contain rounded-[6px] shadow-2xl cursor-zoom-out select-none"
+            onClick={(e) => e.stopPropagation()}
+          />
+
+          {/* Next */}
+          {project.images.length > 1 && (
+            <button
+              className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full border-2 border-resume-ink bg-resume-paper font-caprasimo text-[18px] grid place-items-center opacity-60 hover:opacity-100 transition-opacity z-10"
+              onClick={(e) => {
+                e.stopPropagation();
+                setZoomIndex((i) => (i + 1) % project.images!.length);
+              }}
+              aria-label="Next image"
+            >
+              →
+            </button>
+          )}
+
+          {/* Counter */}
+          {project.images.length > 1 && (
+            <div className="absolute bottom-5 left-1/2 -translate-x-1/2 font-dm-mono text-[12px] text-white/60">
+              {zoomIndex + 1} / {project.images.length}
+            </div>
+          )}
+        </div>
+      )}
     </>
   );
 }
