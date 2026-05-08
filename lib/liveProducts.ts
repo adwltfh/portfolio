@@ -12,9 +12,9 @@ export const LIVE_PRODUCTS: LiveProduct[] = [
   {
     key: "shoply",
     title: "Shoply",
-    desc: "E-commerce website — built from scratch.",
-    url: "#",
-    image: "/live/shoply.png",
+    desc: "Marketplace website — built from scratch.",
+    url: "https://shoply-marketplace.vercel.app",
+    image: "/projects/shoply/1.png",
     stack: ["Next.js", "Tailwind", "Zustand"],
     accent: "#ff8fb3",
   },
