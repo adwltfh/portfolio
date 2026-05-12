@@ -14,7 +14,7 @@ export const LIVE_PRODUCTS: LiveProduct[] = [
     title: "Shoply",
     desc: "Marketplace website — built from scratch.",
     url: "https://shoply-marketplace.vercel.app",
-    image: "/projects/shoply/1.png",
+    image: "https://cdn.jsdelivr.net/gh/adwltfh/portfolio@assets/public/projects/shoply/1.png",
     stack: ["Next.js", "Tailwind", "Zustand"],
     accent: "#ff8fb3",
   },
