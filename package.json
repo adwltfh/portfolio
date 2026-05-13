@@ -13,7 +13,7 @@
     "next": "^15.5.15",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "vercel": "^53.1.1"
+    "vercel": "^53.4.0"
   },
   "devDependencies": {
     "@types/node": "^20",

@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
+import Image from "next/image";
 import { LIVE_PRODUCTS } from "@/lib/liveProducts";
 
 const PILL_COLORS = ["bg-resume-sky", "bg-resume-mint", "bg-resume-lilac-2"];
@@ -133,10 +134,12 @@ export default function LiveProducts() {
                 <span className="absolute inset-0 flex items-center justify-center font-caprasimo text-[36px] text-resume-ink opacity-20 select-none">
                   {p.title[0]}
                 </span>
-                <img
+                <Image
+                  fill
                   src={p.image}
                   alt={`${p.title} screenshot`}
-                  className="absolute inset-0 w-full h-full object-cover"
+                  className="object-cover"
+                  sizes="(max-width: 640px) 100vw, 400px"
                 />
               </div>
 

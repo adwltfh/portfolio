@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback, useEffect } from "react";
+import Image from "next/image";
 import { PROJECT_LIST, type Project } from "@/lib/projects";
 
 // Per-index config for polaroids
@@ -150,10 +151,12 @@ export default function Projects() {
                   </span>
                   {/* Image sits on top once loaded */}
                   {p.images?.[0] && (
-                    <img
+                    <Image
+                      fill
                       src={p.images[0]}
                       alt={p.title}
-                      className="absolute inset-0 w-full h-full object-cover"
+                      className="object-cover"
+                      sizes="300px"
                     />
                   )}
                 </div>
@@ -234,16 +237,18 @@ export default function Projects() {
                     >
                       {/* Actual image */}
                       {hasImages && (
-                        <img
+                        <Image
+                          fill
                           key={`${project.key}-${carouselIndex}`}
                           src={images[carouselIndex]}
                           alt={`${project.title} preview ${carouselIndex + 1}`}
-                          className={`absolute inset-0 w-full h-full ${project.imageFit === "contain" ? "object-contain" : "object-cover"} transition-opacity duration-500 ${imgLoaded ? "opacity-100" : "opacity-0"} cursor-zoom-in`}
+                          className={`${project.imageFit === "contain" ? "object-contain" : "object-cover"} transition-opacity duration-500 ${imgLoaded ? "opacity-100" : "opacity-0"} cursor-zoom-in`}
                           onLoad={() => setImgLoaded(true)}
                           onClick={(e) => {
                             e.stopPropagation();
                             openZoom(carouselIndex);
                           }}
+                          sizes="(max-width: 640px) 100vw, 520px"
                         />
                       )}
 
