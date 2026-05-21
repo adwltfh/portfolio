@@ -147,3 +147,19 @@ body.modal-open {
 .live-scroll-track::-webkit-scrollbar {
   display: none; /* Chrome/Safari */
 }
+
+/* Live product desc overlay — thin scrollbar */
+.live-desc-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--lilac-deep) transparent;
+}
+.live-desc-scroll::-webkit-scrollbar {
+  width: 3px;
+}
+.live-desc-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.live-desc-scroll::-webkit-scrollbar-thumb {
+  background: var(--lilac-deep);
+  border-radius: 999px;
+}

@@ -18,9 +18,9 @@ export const PROJECTS: Record<string, Project> = {
     kicker: "job portal · frontend dev",
     cover: 1,
     glyph: "C",
-    desc: "Carolina is a job portal website.\n\nMy first project at PT Integra Solusi Mandiri, where I contributed to system architecture, database design, and recruitment flow planning. As the sole frontend developer in a small team, I built the interface using Nuxt.js, delivering the project in around six months.",
+    desc: "Developed an end-to-end recruitment platform consisting of two integrated portals: a recruiter/headhunter portal and an applicant portal. The platform was designed to support the hiring workflow from both perspectives, including job posting management, applicant data handling, and application submission processes.\n\nAs a Frontend Developer, I was responsible for implementing responsive and user-friendly interfaces, integrating REST APIs, managing application state, and collaborating closely with the backend team to ensure smooth system functionality. I also contributed to frontend architecture decisions and reusable component development to maintain scalability and consistency across the platform.\n\nThis project was particularly significant because it was my first professional experience using Vue.js and Nuxt.js. Despite being new to the ecosystem at the time, I was able to adapt quickly, learn the framework in a short period, and successfully deliver production-ready features. The experience strengthened my adaptability, problem-solving skills, and confidence in learning new technologies while working in a fast-paced development environment.",
     role: "Frontend Developer",
-    stack: ["Nuxt.js", "TypeScript", "Tailwind"],
+    stack: ["Nuxt.js", "TypeScript", "Pinia", "Axios", "Tailwind"],
     images: [
       "https://cdn.jsdelivr.net/gh/adwltfh/portfolio@assets/public/projects/carolina/1.png",
       "https://cdn.jsdelivr.net/gh/adwltfh/portfolio@assets/public/projects/carolina/2.png",
@@ -40,7 +40,7 @@ export const PROJECTS: Record<string, Project> = {
     kicker: "HRIS revamp · frontend dev",
     cover: 2,
     glyph: "Ch",
-    desc: "tl;dr — Cherry Apps is a comprehensive HRIS built to streamline and modernize people operations.\n\nWhat began as a UI revamp evolved into a full migration from AngularJS to Nuxt.js. Without a predefined blueprint, I led the frontend effort to rebuild features, improve UX, rebrand the product, and introduce new functional requirements.",
+    desc: "Cherry Apps is a comprehensive HRIS platform built to streamline and modernize internal people operations across multiple business processes.\n\nWhat initially started as a UI revamp project eventually evolved into a large-scale frontend migration from AngularJS to Nuxt.js. As part of the frontend team, I contributed to rebuilding and modernizing existing features, improving overall user experience, rebranding the product interface, and implementing new business requirements while ensuring compatibility with the existing system.\n\nOne of the main challenges of this project was the complexity of the business requirements and the extensive customizations that had already been applied to the legacy product over time. Because of this, the migration and adjustment process required careful analysis and gradual implementation to avoid disrupting existing workflows and functionalities.\n\nAdditionally, the project was developed without a complete predefined blueprint or detailed migration guideline, which required strong adaptability, problem-solving, and close collaboration within the team throughout the development process. This experience strengthened my ability to work in complex enterprise-level systems, handle long-term migration projects, and quickly adapt to evolving technical and business requirements.",
     role: "Frontend Developer",
     stack: ["Nuxt.js", "TypeScript", "Tailwind", "Pinia"],
     images: [
@@ -56,7 +56,7 @@ export const PROJECTS: Record<string, Project> = {
     kicker: "microsite · frontend dev",
     cover: 3,
     glyph: "R",
-    desc: "A product microsite shipped to production — owned the full frontend stack from architecture to deploy.",
+    desc: "Contributed to the development of a catering microsite application integrated with WhatsApp Business to simplify the ordering experience for users. The platform allowed users to place catering orders without requiring account registration or login by using WhatsApp-based authentication and token generation flows.\n\nThe application was designed as an extension of the main platform, focusing on providing a lightweight and seamless ordering experience. Catering recommendations were also personalized based on the user’s location, allowing the system to suggest nearby catering vendors instead of displaying random results.\n\nAs a Frontend Developer, I worked on implementing and maintaining responsive UI features using React.js, TypeScript, Tailwind CSS, and Axios. Since the project shared components and design systems with the main platform, I continued and customized existing reusable components to accelerate development and maintain consistency across applications.",
     role: "Frontend Developer",
     stack: ["React.js", "AngularJS", "TypeScript", "Tailwind", "Material UI"],
     images: [
@@ -92,7 +92,7 @@ export const PROJECTS: Record<string, Project> = {
     kicker: "edu platform · frontend dev",
     cover: 5,
     glyph: "El",
-    desc: "Public education platform — drove +30% user engagement through targeted UI optimization and a custom in-site sales workflow.",
+    desc: "At Elektronik Ilmu Indonesia, I worked on a digital education ecosystem consisting of two connected platforms: a landing page platform for product distribution and an online exam portal for UTBK and CPNS tryout simulations.\n\nThe landing page platform functioned as the main entry point for users to explore products, purchase tryout packages, and receive access tokens connected to the exam portal. Before this migration, the company still relied heavily on manual workflows using Google Forms for registrations and tryout management. After receiving angel investment funding, the system was transformed into a fully integrated web platform to improve scalability, operational efficiency, and branding.\n\nThe exam portal itself was designed to support large-scale online examinations with a focus on functionality, stability, and smooth user experience. The system included features such as timer-based exam sessions, listening/audio tests, image zoom for visual questions, token-based authentication, and dynamic question rendering.\n\nOne of the key technical aspects of the project was the integration with a Python-based weighted scoring system used for automated result calculations and performance assessments. Since the platform needed to handle simultaneous exam sessions and maintain reliability during high-traffic usage, much of the development focused on API integration, system stability, and seamless user flows rather than purely visual complexity.\n\nUsing React.js, TypeScript, Tailwind CSS, Material UI, and Axios, I contributed to building responsive interfaces and integrating the frontend with multiple backend services. The migration from manual processes into a dedicated digital platform significantly improved user engagement and operational scalability, resulting in a 30%+ increase in engagement compared to the previous system.",
     role: "Frontend Developer",
     stack: ["React.js", "Next.js", "TypeScript", "Tailwind", "Material UI"],
     images: [
