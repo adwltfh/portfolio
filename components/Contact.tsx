@@ -24,6 +24,14 @@ const CONTACT_ITEMS = [
     value: "South Jakarta, Indonesia",
   },
   {
+    href: "https://github.com/adwltfh",
+    cls: "github",
+    ico: "⎇",
+    icoColor: "bg-resume-lilac",
+    label: "github",
+    value: "adwltfh",
+  },
+  {
     href: "#",
     cls: "port",
     ico: "★",
