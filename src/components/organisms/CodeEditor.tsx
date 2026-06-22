@@ -8,7 +8,7 @@ const CODE_TOKENS: Tok[][] = [
   [["const ", "key"], ["dev", "fn"], [" = {", "punc"]],
   [["  name", "prop"], [": ", "punc"], ['"adawiyyah"', "str"], [",", "punc"]],
   [["  role", "prop"], [": ", "punc"], ['"frontend dev"', "str"], [",", "punc"]],
-  [["  stack", "prop"], [": [", "punc"], ['"react"', "str"], [", ", "punc"], ['"next"', "str"], [", ", "punc"], ['"vue"', "str"], ["],", "punc"]],
+  [["  stack", "prop"], [": [", "punc"], ['"react"', "str"], [", ", "punc"], ['"next"', "str"], [", ", "punc"], ['"vue"', "str"], [", ", "punc"], ['"nuxt"', "str"], ["],", "punc"]],
   [["  available", "prop"], [": ", "punc"], ["true", "bool"], [",", "punc"]],
   [["};", "punc"]],
   [["", "punc"]],
