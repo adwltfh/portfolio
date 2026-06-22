@@ -63,6 +63,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="en"
       data-bg="soft"
       data-motion="full"
+      /* hero layout: "split" (text left, code right — default) | "mirror" (code left, text right) */
+      data-hero="split"
       className={`${display.variable} ${body.variable} ${mono.variable}`}
       suppressHydrationWarning
     >

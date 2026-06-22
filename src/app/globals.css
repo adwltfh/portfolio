@@ -281,12 +281,25 @@ html.reveal-ready .reveal:not(.in) { opacity: 0; transform: translateY(22px); }
 @media (max-width: 880px) {
   .nav__links { display: none; }
   .nav__burger { display: grid; }
+  /* float the nav pill at the BOTTOM of the screen on mobile */
+  .nav-wrap { top: auto; bottom: 18px; flex-direction: column-reverse; }
+  /* …and open the section dropdown upward, above the pill */
+  .nav-mobile { transform-origin: bottom center; transform: translateY(10px) scale(.98); }
+  .nav-mobile.open { transform: none; margin-top: 0; margin-bottom: 10px; }
+  /* keep page-bottom content clear of the floating bar */
+  footer.foot { padding-bottom: 96px; }
 }
 @media (min-width: 881px) { .nav-mobile { display: none; } }
 
 /* ===================== HERO ===================== */
 .hero { padding-top: 150px; padding-bottom: 90px; position: relative; }
 .hero__grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 56px; align-items: center; }
+/* alternate hero layout (set data-hero="mirror" on <html>): code card left, text right.
+   desktop-only so it can't override the mobile single-column stack below. */
+@media (min-width: 941px) {
+  [data-hero="mirror"] .hero__grid { grid-template-columns: .85fr 1.15fr; }
+  [data-hero="mirror"] .collage { order: -1; }
+}
 .badge-avail {
   display: inline-flex; align-items: center; gap: 9px; font-family: var(--mono);
   font-size: 12.5px; font-weight: 700; letter-spacing: .04em; padding: 8px 15px;
@@ -301,7 +314,7 @@ html.reveal-ready .reveal:not(.in) { opacity: 0; transform: translateY(22px); }
 .hero h1 { font-family: var(--display); font-size: clamp(40px, 4.7vw, 66px); line-height: 1.05; margin: 22px 0 0; letter-spacing: -.015em; }
 .hero h1 .pink { color: var(--accent); }
 .hero__sub { font-size: 20px; line-height: 1.6; color: var(--ink-soft); margin: 24px 0 0; max-width: 30ch; }
-.hero__sub i { font-family: var(--mono); font-style: normal; color: var(--ink); background: var(--accent-soft); padding: 1px 6px; border-radius: 6px; }
+.hero__sub i { font-family: var(--mono); font-style: normal; color: var(--ink); background: var(--accent-soft); padding: 1px 6px; border-radius: 6px; white-space: nowrap; }
 .hero__cta { display: flex; gap: 14px; margin-top: 34px; flex-wrap: wrap; }
 .hero__meta { display: flex; gap: 22px; margin-top: 30px; flex-wrap: wrap; }
 .hero__meta div { display: flex; flex-direction: column; gap: 3px; }
@@ -631,9 +644,17 @@ footer.foot { text-align: center; padding: 40px 0 60px; color: var(--ink-faint);
   .collage { order: -1; }
   .hero { padding-top: 128px; }
 }
+@media (max-width: 880px) {
+  /* nav floats at the bottom now, so the hero needn't clear a top bar; and in-page
+     anchors should land sections near the top (no top nav to offset for) */
+  :root { --nav-h: 24px; }
+  .hero { padding-top: 56px; }
+}
 @media (max-width: 600px) {
   :root { --section-pad: 76px; }
-  .container { padding: 0 18px; }
+  /* only touch horizontal padding — a `padding` shorthand here would wipe the
+     hero's padding-bottom (the hero element is also a .container) */
+  .container { padding-left: 18px; padding-right: 18px; }
   .nav__brand { font-size: 17px; margin-right: 4px; }
   .nav { padding: 7px 7px 7px 14px; gap: 4px; }
   .section-head { margin-bottom: 36px; }
@@ -641,9 +662,18 @@ footer.foot { text-align: center; padding: 40px 0 60px; color: var(--ink-faint);
   .tl-card { padding: 22px 20px; }
   .modal__body { padding: 24px 22px 30px; }
   .hero__sub { max-width: none; }
-  .hero-stage { height: 360px; }
+  .hero { padding-top: 40px; padding-bottom: 56px; }
+  /* shrink + lighten the code card so it doesn't dominate the screen */
+  .hero-stage { height: 300px; }
+  .code-body { padding: 18px 16px; font-size: 13px; line-height: 1.6; }
+  .code-head, .code-status { padding: 10px 14px; }
+  /* drop the decorative stickers/washi on small screens to keep the hero clean */
+  .collage .sticker, .collage .washi { display: none; }
 }
 @media (max-width: 380px) {
   .tile-grid { grid-template-columns: 1fr; }
   .nav__cta { padding: 9px 12px; }
+  .hero-stage { height: 264px; }
+  .hero h1 { font-size: 38px; }
+  .code-body { font-size: 12px; }
 }

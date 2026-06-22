@@ -12,11 +12,11 @@ export const data: PortfolioData = {
     email: "adawiyyahlatifah@gmail.com",
     github: "adwltfh",
     githubUrl: "https://github.com/adwltfh",
-    linkedinUrl: "https://www.linkedin.com/",
+    linkedinUrl: "https://www.linkedin.com/in/adawiyyahlatifah/",
     yearsExp: "3+",
-    shipped: "9",
+    shipped: "7",
   },
-  heroStack: ["React", "Next.js", "Vue", "Nuxt", "TypeScript"],
+  heroStack: ["React", "Next.js", "Vue", "Nuxt.js", "TypeScript"],
   marquee: [
     "React",
     "Next.js",
@@ -25,7 +25,7 @@ export const data: PortfolioData = {
     "TypeScript",
     "Tailwind",
     "Pinia",
-    "SEO",
+    "SEO Optimation",
     "Accessibility",
     "Performance",
   ],
@@ -38,13 +38,13 @@ export const data: PortfolioData = {
       kind: "Marketplace website — built from scratch.",
       url: "shoply-marketplace.vercel.app",
       href: "https://shoply-marketplace.vercel.app",
-      stack: ["Next.js", "Tailwind", "React Query", "Zustand"],
+      stack: ["Next.js", "Tailwind", "TanStack Query", "Zustand"],
       accent: "#ff8fb3",
       images: [
         "https://cdn.jsdelivr.net/gh/adwltfh/portfolio@assets/public/projects/shoply/1.png",
       ],
       role: "Frontend Developer · solo build",
-      timeline: "2025 · ongoing",
+      timeline: "2026 · ongoing",
       blurb:
         "A personal marketplace platform I built to push my frontend engineering past portfolio-toy territory — real product listing, filtering, cart & state sync, async API handling, dynamic routing and scalable component architecture, all simulating production-level work.",
       study: {
@@ -52,7 +52,7 @@ export const data: PortfolioData = {
           "I'd shipped plenty of client work, but I wanted a sandbox I fully owned — a storefront that behaves like production, not a portfolio toy. That meant solving the hard parts myself: server-rendered listings, fast filtering over a growing catalogue, a cart that stays in sync across every page, and an architecture that wouldn't buckle as features piled up.",
         approach: [
           "Built on Next.js with server-rendered, dynamically-routed product and category pages — shareable, SEO-friendly URLs out of the box.",
-          "Modelled cart and UI state in Zustand and kept server data fresh with React Query: caching, background refetching and optimistic updates.",
+          "Modelled cart and UI state in Zustand and kept server data fresh with TanStack Query: caching, background refetching and optimistic updates.",
           "Designed a small, composable component system — cards, filter rails, sheets — so new sections drop in without rewrites.",
           "Handled the unglamorous production details: loading and empty states, error boundaries, async edge cases and responsive layouts down to small phones.",
         ],
