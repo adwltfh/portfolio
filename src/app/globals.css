@@ -281,6 +281,10 @@ html.reveal-ready .reveal:not(.in) { opacity: 0; transform: translateY(22px); }
 @media (max-width: 880px) {
   .nav__links { display: none; }
   .nav__burger { display: grid; }
+  /* the bottom pill only carries the tools (theme · hire me · menu) — drop the
+     brand so they fit on narrow screens without overflowing off-screen */
+  .nav__brand { display: none; }
+  .nav { padding: 8px; gap: 8px; margin-inline: auto; }
   /* float the nav pill at the BOTTOM of the screen on mobile */
   .nav-wrap { top: auto; bottom: 18px; flex-direction: column-reverse; }
   /* …and open the section dropdown upward, above the pill */
@@ -655,8 +659,7 @@ footer.foot { text-align: center; padding: 40px 0 60px; color: var(--ink-faint);
   /* only touch horizontal padding — a `padding` shorthand here would wipe the
      hero's padding-bottom (the hero element is also a .container) */
   .container { padding-left: 18px; padding-right: 18px; }
-  .nav__brand { font-size: 17px; margin-right: 4px; }
-  .nav { padding: 7px 7px 7px 14px; gap: 4px; }
+  .nav { padding: 7px; gap: 6px; }
   .section-head { margin-bottom: 36px; }
   .skills-card { padding: 26px 20px; }
   .tl-card { padding: 22px 20px; }
