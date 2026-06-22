@@ -18,8 +18,16 @@ export const data: PortfolioData = {
   },
   heroStack: ["React", "Next.js", "Vue", "Nuxt", "TypeScript"],
   marquee: [
-    "React", "Next.js", "Vue.js", "Nuxt.js", "TypeScript",
-    "Tailwind", "Pinia", "SEO", "Accessibility", "Performance",
+    "React",
+    "Next.js",
+    "Vue.js",
+    "Nuxt.js",
+    "TypeScript",
+    "Tailwind",
+    "Pinia",
+    "SEO",
+    "Accessibility",
+    "Performance",
   ],
 
   featured: [
@@ -32,7 +40,9 @@ export const data: PortfolioData = {
       href: "https://shoply-marketplace.vercel.app",
       stack: ["Next.js", "Tailwind", "React Query", "Zustand"],
       accent: "#ff8fb3",
-      images: ["https://cdn.jsdelivr.net/gh/adwltfh/portfolio@assets/public/projects/shoply/1.png"],
+      images: [
+        "https://cdn.jsdelivr.net/gh/adwltfh/portfolio@assets/public/projects/shoply/1.png",
+      ],
       role: "Frontend Developer · solo build",
       timeline: "2025 · ongoing",
       blurb:
@@ -184,25 +194,66 @@ export const data: PortfolioData = {
 
   skills: {
     daily: [
-      { sym: "⚛", nm: "React", c: "c-sky", cat: "frameworks" },
-      { sym: "N", nm: "Next.js", c: "c-ink", cat: "frameworks" },
-      { sym: "V", nm: "Vue.js", c: "c-mint", cat: "frameworks" },
-      { sym: "Nx", nm: "Nuxt.js", c: "c-mint", cat: "frameworks" },
-      { sym: "A", nm: "AngularJS", c: "c-pink", cat: "frameworks" },
-      { sym: "Ts", nm: "TypeScript", c: "c-sky", cat: "languages" },
-      { sym: "Js", nm: "JavaScript", c: "c-butter", cat: "languages" },
-      { sym: "</>", nm: "HTML / CSS", c: "c-butter", cat: "languages" },
-      { sym: "≈", nm: "Tailwind", c: "c-sky", cat: "styling" },
-      { sym: "π", nm: "Pinia", c: "c-butter", cat: "styling" },
-      { sym: "↻", nm: "Redux", c: "c-lav", cat: "styling" },
-      { sym: "L", nm: "Laravel", c: "c-pink", cat: "backend" },
+      {
+        sym: "teenyicons:react-outline",
+        nm: "React",
+        c: "c-sky",
+        cat: "frameworks",
+      },
+      {
+        sym: "teenyicons:nextjs-outline",
+        nm: "Next.js",
+        c: "c-ink",
+        cat: "frameworks",
+      },
+      { sym: "mdi:vuejs", nm: "Vue.js", c: "c-mint", cat: "frameworks" },
+      {
+        sym: "teenyicons:nuxtjs-outline",
+        nm: "Nuxt.js",
+        c: "c-mint",
+        cat: "frameworks",
+      },
+      { sym: "mdi:angularjs", nm: "AngularJS", c: "c-pink", cat: "frameworks" },
+      {
+        sym: "devicon-plain:typescript",
+        nm: "TypeScript",
+        c: "c-sky",
+        cat: "languages",
+      },
+      {
+        sym: "teenyicons:javascript-outline",
+        nm: "JavaScript",
+        c: "c-butter",
+        cat: "languages",
+      },
+      {
+        sym: "teenyicons:tailwind-solid",
+        nm: "Tailwind CSS",
+        c: "c-sky",
+        cat: "styling",
+      },
+      { sym: "simple-icons:pinia", nm: "Pinia", c: "c-butter", cat: "styling" },
+      { sym: "simple-icons:redux", nm: "Redux", c: "c-lav", cat: "styling" },
     ],
-    support: ["Python", "REST API", "MySQL", "Firebase", "AWS · S3 / EC2 / RDS", "BigQuery", "Tableau", "Looker Studio"],
+    support: [
+      "Laravel",
+      "Python",
+      "REST API",
+      "Jest",
+      "PlayWright",
+      "WordPress",
+      "MySQL",
+      "Firebase",
+      "AWS · S3 / EC2 / RDS",
+    ],
   },
 
   experience: [
     {
-      title: "Frontend Developer", org: "PT Integra Solusi Mandiri", when: "DEC 2023 — NOW", dot: "var(--butter)",
+      title: "Frontend Developer",
+      org: "PT Integra Solusi Mandiri",
+      when: "DEC 2023 — NOW",
+      dot: "var(--butter)",
       points: [
         "Delivered 3 enterprise web apps end-to-end — Carolina (job portal), Cherry (HRIS revamp) and KendiXpress (microsite) — owning the frontend stack across Nuxt, AngularJS, REST & SQL.",
         "Defined application architecture, frontend structure & business flows for each product to keep them scalable and maintainable.",
@@ -211,7 +262,10 @@ export const data: PortfolioData = {
       ],
     },
     {
-      title: "Frontend Developer · ExcloLab", org: "PT Pengendali Sistem Nusantara · project-based", when: "JUL — OCT 2025", dot: "var(--pink)",
+      title: "Frontend Developer · ExcloLab",
+      org: "PT Pengendali Sistem Nusantara · project-based",
+      when: "JUL — OCT 2025",
+      dot: "var(--pink)",
       points: [
         "Initialised the full project from scratch with Next.js.",
         "Implemented a comprehensive SEO strategy covering technical SEO, metadata & search visibility.",
@@ -220,7 +274,10 @@ export const data: PortfolioData = {
       ],
     },
     {
-      title: "Frontend Developer", org: "Elektronik Ilmu Indonesia · Elmu.id", when: "AUG 2022 — AUG 2023", dot: "var(--sky)",
+      title: "Frontend Developer",
+      org: "Elektronik Ilmu Indonesia · Elmu.id",
+      when: "AUG 2022 — AUG 2023",
+      dot: "var(--sky)",
       points: [
         "Improved user engagement by 30%+ through targeted UI optimisation and frontend performance work on a React / Next public site.",
         "Integrated a custom in-site sales workflow to replace a manual Google-Forms process — better conversions, fewer steps.",
@@ -243,7 +300,14 @@ export const site = {
   twitterDescription:
     "Frontend developer crafting clean, performant interfaces with React, Next.js & Vue.",
   keywords: [
-    "frontend developer", "React", "Next.js", "Vue", "Nuxt", "TypeScript",
-    "Tailwind", "Jakarta", "web developer portfolio",
+    "frontend developer",
+    "React",
+    "Next.js",
+    "Vue",
+    "Nuxt",
+    "TypeScript",
+    "Tailwind",
+    "Jakarta",
+    "web developer portfolio",
   ],
 };
