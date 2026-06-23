@@ -15,6 +15,10 @@ export const metadata: Metadata = {
   creator: data.person.name,
   alternates: { canonical: "/" },
   robots: { index: true, follow: true },
+  icons: {
+    icon: "https://cdn.jsdelivr.net/gh/adwltfh/portfolio@assets/public/favicon.ico",
+    shortcut: "https://cdn.jsdelivr.net/gh/adwltfh/portfolio@assets/public/favicon.ico",
+  },
   openGraph: {
     type: "website",
     title: site.shortTitle,
